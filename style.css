@@ -585,7 +585,7 @@ body {
   z-index: 1;
   top: 55%;
   left: 53%;
-  width: clamp(8rem, 14vw, 15rem);
+  width: clamp(12rem, 14vw, 15rem);
   opacity: 0.3;
   transform: translate(-50%, -50%) rotate(24deg);
 }
