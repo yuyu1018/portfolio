@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YUDA YUSEIのポートフォリオサイトです。" />
+    <title>YUDA YUSEI | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+  <body>
+    <div class="site-layout">
+      <aside class="hero" data-theme="about">
+        <header class="site-header">
+          <a class="site-logo font-en" href="#top" aria-label="ページの先頭へ">PORTFOLIO</a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-controls="global-nav"
+            aria-expanded="false"
+            aria-label="メニューを開く"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="global-nav" id="global-nav" aria-label="メインナビゲーション">
+            <ul class="global-nav__list">
+              <li><a class="global-nav__link is-current font-en" href="#about">ABOUT</a></li>
+              <li><a class="global-nav__link font-en" href="#works">WORKS</a></li>
+              <li><a class="global-nav__link font-en" href="#skill">SKILL</a></li>
+              <li><a class="global-nav__link font-en" href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <img
+          class="hero__chameleon"
+          src="/images/hero/hero-chameleon-footprints.png"
+          alt="足跡を残しながら枝に乗るカメレオンのイラスト"
+          fetchpriority="high"
+          decoding="async"
+        />
+
+        <div class="hero__heading">
+          <p class="hero__role font-en">WEB DESIGNER / CODING</p>
+          <h1 class="hero__name font-en"><span>Y</span>UDA <span>Y</span>USEI</h1>
+        </div>
+
+        <a class="hero__scroll font-en" href="#about">
+          <span>SCROLL</span>
+        </a>
+
+      </aside>
+
+      <main class="main-content" id="top">
+        <section class="about" id="about" data-theme="about" aria-labelledby="about-title">
+          <div class="about__inner">
+            <header class="about__heading">
+              <div>
+                <p class="section-label font-en">01 / ABOUT</p>
+                <h2 class="about__title font-en" id="about-title">WHO I AM</h2>
+              </div>
+            </header>
+
+            <div class="about__grid">
+              <article class="about__profile">
+                <p class="about__catch">デザインと実装、<br />どちらも好きです。</p>
+                <div class="about__copy">
+                  <p>
+                    京都市在住、2001年生まれ。カメレオンが好きで、Web制作をしています。
+                    以前はコーディングの方が好きでしたが、最近はデザインを考えている時間にも同じくらい夢中です。
+                  </p>
+                  <p>
+                    音楽、イラスト、ゲーム、料理など、気になったことはまず試してみるタイプです。
+                    その好奇心を、見る人に伝わるWebサイトづくりへつなげています。
+                  </p>
+                </div>
+              </article>
+
+              <div class="about__visual">
+                <header class="about__likes-heading">
+                  <div>
+                    <p class="font-en" id="likes-title">THINGS I LIKE</p>
+                    <span>気になるイラストを選んでください</span>
+                  </div>
+                </header>
+
+                <span class="about__likes-action font-en" aria-hidden="true">
+                  <span class="about__likes-action-click">CLICK!</span>
+                  <span class="about__likes-action-tap">TAP!</span>
+                </span>
+
+                <div class="about__likes" role="tablist" aria-labelledby="likes-title">
+                  <button
+                    class="about__like-tab is-current"
+                    id="like-tab-udon"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="like-panel-udon"
+                  >
+                    <img src="/images/about/about-udon.png" alt="" loading="lazy" decoding="async" />
+                    <span class="font-en">UDON</span>
+                  </button>
+
+                  <button
+                    class="about__like-tab"
+                    id="like-tab-music"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="like-panel-music"
+                    tabindex="-1"
+                  >
+                    <img src="/images/about/about-music.png" alt="" loading="lazy" decoding="async" />
+                    <span class="font-en">MUSIC</span>
+                  </button>
+
+                  <button
+                    class="about__like-tab"
+                    id="like-tab-game"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="like-panel-game"
+                    tabindex="-1"
+                  >
+                    <img src="/images/about/about-game.png" alt="" loading="lazy" decoding="async" />
+                    <span class="font-en">GAME</span>
+                  </button>
+
+                  <button
+                    class="about__like-tab"
+                    id="like-tab-drawing"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="like-panel-drawing"
+                    tabindex="-1"
+                  >
+                    <img src="/images/about/about-tablet.png" alt="" loading="lazy" decoding="async" />
+                    <span class="font-en">DRAWING</span>
+                  </button>
+                </div>
+
+                <div class="about__like-details" aria-live="polite">
+                  <article
+                    class="about__like-panel"
+                    id="like-panel-udon"
+                    role="tabpanel"
+                    aria-labelledby="like-tab-udon"
+                  >
+                    <p class="font-en">UDON</p>
+                    <p>食べ物の中でうどんが一番好きです。特に肉うどんが超大好きです。</p>
+                  </article>
+
+                  <article
+                    class="about__like-panel"
+                    id="like-panel-music"
+                    role="tabpanel"
+                    aria-labelledby="like-tab-music"
+                    hidden
+                  >
+                    <p class="font-en">MUSIC</p>
+                    <p>作業中や移動中によく音楽を聴きます。気分に合わせていろいろな曲を楽しんでいます。</p>
+                  </article>
+
+                  <article
+                    class="about__like-panel"
+                    id="like-panel-game"
+                    role="tabpanel"
+                    aria-labelledby="like-tab-game"
+                    hidden
+                  >
+                    <p class="font-en">GAME</p>
+                    <p>気になったゲームはジャンルを問わず遊びます。世界観や画面のデザインを見るのも好きです。</p>
+                  </article>
+
+                  <article
+                    class="about__like-panel"
+                    id="like-panel-drawing"
+                    role="tabpanel"
+                    aria-labelledby="like-tab-drawing"
+                    hidden
+                  >
+                    <p class="font-en">DRAWING</p>
+                    <p>時間があるときは絵を描いています。自分の好きなものを形にしていく時間が好きです。</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="works content-section" id="works" data-theme="works" aria-labelledby="works-title">
+          <div class="section-card section-card--works">
+            <img class="works__footprints" src="/images/common/chameleon-footprints.svg" alt="" loading="lazy" decoding="async" />
+
+            <div class="works__content">
+              <header class="section-heading section-heading--works">
+                <p class="section-label font-en">02 / SELECTED WORKS</p>
+                <h2 class="section-title font-en" id="works-title">WORKS</h2>
+              </header>
+
+              <div class="works__grid">
+                <article class="work-card">
+                  <div class="work-card__media">
+                    <div class="work-card__image" aria-hidden="true"></div>
+                  </div>
+                  <div class="work-card__info">
+                    <div>
+                      <p class="work-card__category font-en">WEB SITE / REDESIGN</p>
+                      <h3 class="work-card__title">ホテルサイト リデザイン</h3>
+                    </div>
+                    <span class="work-card__arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M14 7l5 5-5 5" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
+
+                <article class="work-card">
+                  <div class="work-card__media">
+                    <div class="work-card__image" aria-hidden="true"></div>
+                    <img class="works__chameleon" src="/images/works/works-chameleon-peek.svg" alt="" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="work-card__info">
+                    <div>
+                      <p class="work-card__category font-en">WEB SITE / REDESIGN</p>
+                      <h3 class="work-card__title">ホテルサイト リデザイン</h3>
+                    </div>
+                    <span class="work-card__arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M14 7l5 5-5 5" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
+
+                <article class="work-card">
+                  <div class="work-card__media">
+                    <div class="work-card__image" aria-hidden="true"></div>
+                  </div>
+                  <div class="work-card__info">
+                    <div>
+                      <p class="work-card__category font-en">WEB SITE / REDESIGN</p>
+                      <h3 class="work-card__title">ホテルサイト リデザイン</h3>
+                    </div>
+                    <span class="work-card__arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M14 7l5 5-5 5" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
+
+                <article class="work-card">
+                  <div class="work-card__media">
+                    <div class="work-card__image" aria-hidden="true"></div>
+                  </div>
+                  <div class="work-card__info">
+                    <div>
+                      <p class="work-card__category font-en">WEB SITE / REDESIGN</p>
+                      <h3 class="work-card__title">ホテルサイト リデザイン</h3>
+                    </div>
+                    <span class="work-card__arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M14 7l5 5-5 5" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="skill content-section" id="skill" data-theme="skill" aria-labelledby="skill-title">
+          <div class="section-card section-card--skill">
+            <div class="skill__content">
+              <header class="section-heading section-heading--skill">
+                <p class="section-label font-en">03 / WHAT I DO</p>
+                <h2 class="section-title font-en" id="skill-title">SKILL</h2>
+              </header>
+
+              <div class="skill-groups">
+                <img class="skill__tail" src="/images/skill/skill-chameleon-tail.png" alt="" loading="lazy" decoding="async" />
+
+                <section class="skill-group" aria-labelledby="design-skill-title">
+                  <div class="skill-group__heading">
+                    <h3 class="font-en" id="design-skill-title">DESIGN</h3>
+                    <img src="/images/skill/skill-tongue.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+
+                  <div class="skill-list">
+                    <article class="skill-item">
+                      <img class="skill-item__icon" src="/images/skill/skill-figma.svg" alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <h4 class="skill-item__title font-en">Figma</h4>
+                        <p>ワイヤーフレームの作成から、Webサイトのデザイン制作まで対応できます。</p>
+                      </div>
+                    </article>
+
+                    <article class="skill-item">
+                      <img class="skill-item__icon" src="/images/skill/skill-photoshop.svg" alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <h4 class="skill-item__title font-en">Photoshop</h4>
+                        <p>画像の補正・切り抜き・加工など、Web制作に必要な基本的な画像編集ができます。</p>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="skill-group" aria-labelledby="coding-skill-title">
+                  <div class="skill-group__heading">
+                    <h3 class="font-en" id="coding-skill-title">CODING</h3>
+                    <img src="/images/skill/skill-tongue.png" alt="" loading="lazy" decoding="async" />
+                  </div>
+
+                  <div class="skill-list">
+                    <article class="skill-item">
+                      <img class="skill-item__icon" src="/images/skill/skill-html-css.svg" alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <h4 class="skill-item__title font-en">HTML / CSS</h4>
+                        <p>レスポンシブ対応を含むWebサイトのコーディングができます。Flexbox・Grid・clamp関数・CSS変数を使用した実装経験があります。</p>
+                      </div>
+                    </article>
+
+                    <article class="skill-item">
+                      <img class="skill-item__icon" src="/images/skill/skill-javascript.svg" alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <h4 class="skill-item__title font-en">JavaScript</h4>
+                        <p>スライダー・モーダル・ハンバーガーメニュー・タブ切り替えなど、Webサイトで使用する基本的な動きの実装・調整ができます。</p>
+                      </div>
+                    </article>
+
+                    <article class="skill-item">
+                      <img class="skill-item__icon" src="/images/skill/skill-wordpress.svg" alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <h4 class="skill-item__title font-en">WordPress</h4>
+                        <p>オリジナルテーマの構築や、カスタム投稿タイプ・ACFを使用した更新しやすいサイトの実装経験があります。</p>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact" data-theme="contact" aria-labelledby="contact-title">
+          <div class="contact__main">
+            <div class="contact__copy">
+              <div class="contact__body">
+                <div class="contact__heading">
+                  <p class="section-label contact__eyebrow font-en">04 / CONTACT</p>
+                  <h2 class="contact__title font-en" id="contact-title">
+                    LET'S<br /><span data-text="TALK!">TALK!</span>
+                  </h2>
+                </div>
+
+                <p class="contact__text">
+                  Webサイト制作のご相談やご質問など、<br class="contact__text-break" />まずは気軽にお聞かせください。
+                </p>
+
+                <!-- 公開前に実際のメールアドレスへ変更してください -->
+                <a class="contact__mail font-en" href="mailto:your-address@example.com" aria-label="メールで問い合わせる">
+                  <span>CONTACT ME</span>
+                  <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M7 16h18M18 9l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact__art">
+              <img class="contact__chameleon" src="/images/contact/contact-chameleon.svg" alt="舌を伸ばすカメレオンのイラスト" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <footer class="contact__footer font-en">
+            <p>DESIGN &amp; CODE WITH CURIOSITY.</p>
+            <p>© 2026 YUDA YUSEI</p>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>
