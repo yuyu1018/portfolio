@@ -63,7 +63,7 @@
       <main class="main-content" id="top">
         <section class="about" id="about" data-theme="about" aria-labelledby="about-title">
           <div class="about__inner">
-            <header class="about__heading">
+            <header class="about__heading" data-reveal="up">
               <div>
                 <p class="section-label font-en">01 / ABOUT</p>
                 <h2 class="about__title font-en" id="about-title">WHO I AM</h2>
@@ -71,7 +71,7 @@
             </header>
 
             <div class="about__grid">
-              <article class="about__profile">
+              <article class="about__profile" data-reveal="up" data-reveal-delay="1">
                 <p class="about__catch">デザインと実装、<br />どちらも好きです。</p>
                 <div class="about__copy">
                   <p>
@@ -85,7 +85,7 @@
                 </div>
               </article>
 
-              <div class="about__visual">
+              <div class="about__visual" data-reveal="up" data-reveal-delay="2">
                 <header class="about__likes-heading">
                   <div>
                     <p class="font-en" id="likes-title">THINGS I LIKE</p>
@@ -205,13 +205,13 @@
             <img class="works__footprints" src="/images/common/chameleon-footprints.svg" alt="" loading="lazy" decoding="async" />
 
             <div class="works__content">
-              <header class="section-heading section-heading--works">
+              <header class="section-heading section-heading--works" data-reveal="up">
                 <p class="section-label font-en">02 / SELECTED WORKS</p>
                 <h2 class="section-title font-en" id="works-title">WORKS</h2>
               </header>
 
               <div class="works__grid">
-                <article class="work-card">
+                <article class="work-card" data-reveal="up">
                   <div class="work-card__media">
                     <div class="work-card__image" aria-hidden="true"></div>
                   </div>
@@ -228,7 +228,7 @@
                   </div>
                 </article>
 
-                <article class="work-card">
+                <article class="work-card" data-reveal="up" data-reveal-delay="1">
                   <div class="work-card__media">
                     <div class="work-card__image" aria-hidden="true"></div>
                     <img class="works__chameleon" src="/images/works/works-chameleon-peek.svg" alt="" loading="lazy" decoding="async" />
@@ -246,7 +246,7 @@
                   </div>
                 </article>
 
-                <article class="work-card">
+                <article class="work-card" data-reveal="up" data-reveal-delay="2">
                   <div class="work-card__media">
                     <div class="work-card__image" aria-hidden="true"></div>
                   </div>
@@ -263,7 +263,7 @@
                   </div>
                 </article>
 
-                <article class="work-card">
+                <article class="work-card" data-reveal="up" data-reveal-delay="3">
                   <div class="work-card__media">
                     <div class="work-card__image" aria-hidden="true"></div>
                   </div>
@@ -288,7 +288,7 @@
         <section class="skill content-section" id="skill" data-theme="skill" aria-labelledby="skill-title">
           <div class="section-card section-card--skill">
             <div class="skill__content">
-              <header class="section-heading section-heading--skill">
+              <header class="section-heading section-heading--skill" data-reveal="up">
                 <p class="section-label font-en">03 / WHAT I DO</p>
                 <h2 class="section-title font-en" id="skill-title">SKILL</h2>
               </header>
@@ -296,7 +296,7 @@
               <div class="skill-groups">
                 <img class="skill__tail" src="/images/skill/skill-chameleon-tail.png" alt="" loading="lazy" decoding="async" />
 
-                <section class="skill-group" aria-labelledby="design-skill-title">
+                <section class="skill-group" aria-labelledby="design-skill-title" data-reveal="up" data-reveal-delay="1">
                   <div class="skill-group__heading">
                     <h3 class="font-en" id="design-skill-title">DESIGN</h3>
                     <img src="/images/skill/skill-tongue.png" alt="" loading="lazy" decoding="async" />
@@ -321,7 +321,7 @@
                   </div>
                 </section>
 
-                <section class="skill-group" aria-labelledby="coding-skill-title">
+                <section class="skill-group" aria-labelledby="coding-skill-title" data-reveal="up" data-reveal-delay="2">
                   <div class="skill-group__heading">
                     <h3 class="font-en" id="coding-skill-title">CODING</h3>
                     <img src="/images/skill/skill-tongue.png" alt="" loading="lazy" decoding="async" />
@@ -362,19 +362,19 @@
           <div class="contact__main">
             <div class="contact__copy">
               <div class="contact__body">
-                <div class="contact__heading">
+                <div class="contact__heading" data-reveal="up">
                   <p class="section-label contact__eyebrow font-en">04 / CONTACT</p>
                   <h2 class="contact__title font-en" id="contact-title">
                     LET'S<br /><span data-text="TALK!">TALK!</span>
                   </h2>
                 </div>
 
-                <p class="contact__text">
+                <p class="contact__text" data-reveal="up" data-reveal-delay="1">
                   Webサイト制作のご相談やご質問など、<br class="contact__text-break" />まずは気軽にお聞かせください。
                 </p>
 
                 <!-- 公開前に実際のメールアドレスへ変更してください -->
-                <a class="contact__mail font-en" href="mailto:your-address@example.com" aria-label="メールで問い合わせる">
+                <a class="contact__mail font-en" href="mailto:your-address@example.com" aria-label="メールで問い合わせる" data-reveal="fade" data-reveal-delay="2">
                   <span>CONTACT ME</span>
                   <svg viewBox="0 0 32 32" aria-hidden="true">
                     <path d="M7 16h18M18 9l7 7-7 7" />
@@ -383,7 +383,7 @@
               </div>
             </div>
 
-            <div class="contact__art">
+            <div class="contact__art" data-reveal="fade" data-reveal-delay="3">
               <img class="contact__chameleon" src="/images/contact/contact-chameleon.svg" alt="舌を伸ばすカメレオンのイラスト" loading="lazy" decoding="async" />
             </div>
           </div>
