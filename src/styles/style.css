@@ -9,6 +9,9 @@
   --color-yellow: #ffd23f;
   --color-blue: #58c5e5;
   --color-green: #48aa63;
+  --color-yellow-soft: #ffe179;
+  --color-blue-soft: #8bd8ee;
+  --color-green-soft: #7bc58f;
   --color-red: #ed6752;
   --color-thumbnail: #e6e2d8;
   --stage-width: clamp(32rem, 42vw, 58rem);
@@ -1041,6 +1044,10 @@ body {
 
 @media (max-width: 700px) {
   :root { --section-space: clamp(4.5rem, 18vw, 6rem); --content-gutter: clamp(1.25rem, 6vw, 1.75rem); }
+
+  .works { background: var(--color-yellow-soft); }
+  .skill { background: var(--color-blue-soft); }
+  .contact { background: var(--color-green-soft); }
 
   .hero__role { font-size: clamp(1.125rem, 5vw, 1.25rem); }
   .hero__name { font-size: 3rem; }
