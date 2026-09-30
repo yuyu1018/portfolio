@@ -1167,12 +1167,14 @@ body {
   }
 
   .contact__footer {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.5rem, 2.4vw, 0.65rem);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
-  .contact__footer p:first-child { grid-column: 1 / -1; }
   .contact__footer p:last-child { text-align: right; }
 }
 
