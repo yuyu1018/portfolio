@@ -1,10 +1,36 @@
 "use strict";
 
+document.documentElement.classList.add("js");
+
 const hero = document.querySelector(".hero");
 const sections = document.querySelectorAll(".main-content > section[data-theme]");
 const navigationLinks = document.querySelectorAll(".global-nav__link");
 const menuToggle = document.querySelector(".menu-toggle");
 const globalNav = document.querySelector(".global-nav");
+const revealTargets = document.querySelectorAll("[data-reveal]");
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealTargets.forEach((target) => target.classList.add("is-revealed"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+}
 
 const setMenuOpen = (isOpen, restoreFocus = false) => {
   globalNav.classList.toggle("is-open", isOpen);
