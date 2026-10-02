@@ -8,14 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/styles/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#top">本文へ移動</a>
+
     <div class="site-layout">
-      <aside class="hero" data-theme="about">
+      <div class="hero" data-theme="about">
         <header class="site-header">
           <a class="site-logo font-en" href="#top" aria-label="ページの先頭へ">PORTFOLIO</a>
 
@@ -33,7 +35,7 @@
 
           <nav class="global-nav" id="global-nav" aria-label="メインナビゲーション">
             <ul class="global-nav__list">
-              <li><a class="global-nav__link is-current font-en" href="#about">ABOUT</a></li>
+              <li><a class="global-nav__link is-current font-en" href="#about" aria-current="location">ABOUT</a></li>
               <li><a class="global-nav__link font-en" href="#works">WORKS</a></li>
               <li><a class="global-nav__link font-en" href="#skill">SKILL</a></li>
               <li><a class="global-nav__link font-en" href="#contact">CONTACT</a></li>
@@ -58,9 +60,9 @@
           <span>SCROLL</span>
         </a>
 
-      </aside>
+      </div>
 
-      <main class="main-content" id="top">
+      <main class="main-content" id="top" tabindex="-1">
         <section class="about" id="about" data-theme="about" aria-labelledby="about-title">
           <div class="about__inner">
             <header class="about__heading" data-reveal="up">
@@ -202,11 +204,11 @@
         </section>
 
         <section class="works content-section" id="works" data-theme="works" aria-labelledby="works-title">
-          <div class="section-card section-card--works">
+          <div class="section-card">
             <img class="works__footprints" src="/images/common/chameleon-footprints.svg" alt="" loading="lazy" decoding="async" />
 
             <div class="works__content">
-              <header class="section-heading section-heading--works" data-reveal="up">
+              <header class="section-heading" data-reveal="up">
                 <p class="section-label font-en">02 / SELECTED WORKS</p>
                 <h2 class="section-title font-en" id="works-title">WORKS</h2>
               </header>
@@ -287,7 +289,7 @@
         </section>
 
         <section class="skill content-section" id="skill" data-theme="skill" aria-labelledby="skill-title">
-          <div class="section-card section-card--skill">
+          <div class="section-card">
             <div class="skill__content">
               <header class="section-heading section-heading--skill" data-reveal="up">
                 <p class="section-label font-en">03 / WHAT I DO</p>
@@ -374,7 +376,6 @@
                   Webサイト制作のご相談やご質問など、<br class="contact__text-break" />まずは気軽にお聞かせください。
                 </p>
 
-                <!-- 公開前に実際のメールアドレスへ変更してください -->
                 <a class="contact__mail font-en" href="mailto:yudayusei@gmail.com" aria-label="メールで問い合わせる" data-reveal="fade" data-reveal-delay="2">
                   <span>CONTACT ME</span>
                   <svg viewBox="0 0 32 32" aria-hidden="true">

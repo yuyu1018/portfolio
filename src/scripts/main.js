@@ -89,7 +89,7 @@ const activateSection = (section) => {
     link.classList.toggle("is-current", isCurrent);
 
     if (isCurrent) {
-      link.setAttribute("aria-current", "page");
+      link.setAttribute("aria-current", "location");
     } else {
       link.removeAttribute("aria-current");
     }

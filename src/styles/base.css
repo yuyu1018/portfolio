@@ -1,0 +1,64 @@
+:root {
+  --font-ja: "Noto Sans JP", sans-serif;
+  --font-en: "Fredoka", sans-serif;
+  --color-ink: #1d1d1b;
+  --color-paper: #fffdf6;
+  --color-white: #ffffff;
+  --color-yellow: #ffd23f;
+  --color-blue: #58c5e5;
+  --color-green: #48aa63;
+  --color-red: #ed6752;
+  --color-blue-soft: #c7e5ed;
+  --color-line: #e5e5e5;
+  --stage-width: clamp(32rem, 42vw, 58rem);
+  --section-space: clamp(5rem, 8vw, 9rem);
+  --content-gutter: clamp(2rem, 4.5vw, 5rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--color-ink);
+  background: var(--color-ink);
+  font-family: var(--font-ja);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-yellow);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 4px;
+}
+
+.font-en,
+:lang(en) {
+  font-family: var(--font-en);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-paper);
+  background: var(--color-ink);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transform: translateY(calc(-100% - 2rem));
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

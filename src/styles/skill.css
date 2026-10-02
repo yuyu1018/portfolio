@@ -1,0 +1,129 @@
+.skill { background: var(--color-blue); }
+.skill__content { padding: 0; }
+.section-heading--skill { margin-bottom: clamp(3rem, 5vw, 5rem); }
+
+.skill-groups {
+  position: relative;
+  width: 100%;
+  padding: clamp(2rem, 3.5vw, 3.5rem);
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
+  border-radius: clamp(1.5rem, 2.2vw, 2.5rem);
+}
+
+.skill-group {
+  position: relative;
+  width: 100%;
+  color: var(--color-ink);
+}
+
+.skill-group + .skill-group {
+  margin-top: clamp(3rem, 4vw, 4rem);
+}
+
+.skill-group__heading {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
+  margin-bottom: clamp(1rem, 1.8vw, 1.75rem);
+}
+
+.skill-group__heading h3 {
+  flex: 0 0 auto;
+  font-size: clamp(1.75rem, 2.6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.skill-group__heading img {
+  flex: 0 0 auto;
+  width: clamp(4.5rem, 7vw, 6.5rem);
+  transform-origin: left center;
+  transition: transform 0.28s ease;
+}
+
+.skill-list {
+  display: grid;
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: clamp(3.75rem, 5.5vw, 5rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 1.6vw, 1.5rem);
+  padding-block: clamp(1.25rem, 2.2vw, 2rem);
+  border-bottom: 1px solid var(--color-line);
+  transition: transform 0.25s ease;
+}
+
+.skill-item__icon {
+  width: 100%;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.skill-item:last-child {
+  border-bottom: 0;
+}
+
+.skill-item__title { margin-bottom: 0.45rem; font-size: clamp(1.25rem, 1.4vw, 1.35rem); font-weight: 600; line-height: 1.3; }
+.skill-item p { max-width: 45rem; font-size: clamp(1rem, 0.95vw, 1.05rem); font-weight: 500; line-height: 1.7; }
+
+.skill__tail {
+  position: absolute;
+  z-index: 4;
+  top: 80%;
+  right: -87px;
+  width: 170px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  animation: skill-tail-wag 6s ease-in-out infinite;
+  will-change: transform;
+  user-select: none;
+}
+
+@keyframes skill-tail-wag {
+  0%, 55%, 90%, 100% { transform: translateY(-50%) rotate(0); }
+  62% { transform: translateY(-50%) rotate(-6deg); }
+  69% { transform: translateY(-50%) rotate(5deg); }
+  76% { transform: translateY(-50%) rotate(-3deg); }
+  83% { transform: translateY(-50%) rotate(2deg); }
+}
+
+@keyframes tongue-flick {
+  0% { transform: translateY(0) scaleX(1); }
+  45% { transform: translateY(-0.15rem) scaleX(1.2); }
+  72% { transform: translateY(0.08rem) scaleX(1.12); }
+  100% { transform: translateY(0) scaleX(1.16); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-group:hover .skill-group__heading img {
+    animation: tongue-flick 0.48s ease-out both;
+  }
+
+  .skill-item:hover {
+    transform: translateX(0.25rem);
+  }
+
+  .skill-group:first-of-type .skill-item:nth-child(1):hover .skill-item__icon {
+    transform: translateY(-0.3rem) rotate(-4deg) scale(1.05);
+  }
+
+  .skill-group:first-of-type .skill-item:nth-child(2):hover .skill-item__icon {
+    transform: rotate(5deg) scale(1.06);
+  }
+
+  .skill-group:last-of-type .skill-item:nth-child(1):hover .skill-item__icon {
+    transform: translateY(-0.2rem) rotate(-3deg) scale(1.05);
+  }
+
+  .skill-group:last-of-type .skill-item:nth-child(2):hover .skill-item__icon {
+    transform: rotate(7deg) scale(1.06);
+  }
+
+  .skill-group:last-of-type .skill-item:nth-child(3):hover .skill-item__icon {
+    transform: rotate(-5deg) scale(1.05);
+  }
+}
