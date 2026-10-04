@@ -62,3 +62,31 @@ body {
 .skip-link:focus {
   transform: translateY(0);
 }
+
+/* TOP・実績詳細ページで共通のフッター */
+.site-footer {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: clamp(1.25rem, 2vw, 2rem);
+  border-top: 2px solid var(--color-ink);
+  font-size: clamp(0.65rem, 0.78vw, 0.8rem);
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.07em;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    flex-wrap: nowrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.5rem, 2.4vw, 0.65rem);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .site-footer p:last-child { text-align: right; }
+}
