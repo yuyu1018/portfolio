@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="168" viewBox="0 0 224 168">
+  <defs>
+    <filter id="print-shadow" filterUnits="userSpaceOnUse" x="0" y="0" width="224" height="168" color-interpolation-filters="sRGB">
+      <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="#1d1d1b"/>
+    </filter>
+  </defs>
+  <g transform="translate(4 0)">
+    <g filter="url(#print-shadow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M45 26C61 26 73 38 73 54V102C73 118 61 130 45 130S17 118 17 102V54C17 38 29 26 45 26Z" stroke="#1d1d1b" stroke-width="35"/>
+      <path d="M45 26C61 26 73 38 73 54V102C73 118 61 130 45 130S17 118 17 102V54C17 38 29 26 45 26Z" stroke="#fffdf6" stroke-width="27"/>
+    </g>
+    <g transform="translate(-6 0)" filter="url(#print-shadow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M125 56C125 38 139 26 158 26S192 40 192 58C192 73 181 83 170 93L125 130H192" stroke="#1d1d1b" stroke-width="35"/>
+      <path d="M125 56C125 38 139 26 158 26S192 40 192 58C192 73 181 83 170 93L125 130H192" stroke="#58c5e5" stroke-width="27"/>
+    </g>
+  </g>
+</svg>

@@ -27,6 +27,7 @@
 }
 
 .work-card { min-width: 0; counter-increment: project; }
+.work-card__link { display: block; border-radius: 1rem; }
 .work-card__media {
   position: relative;
   transform-origin: center;

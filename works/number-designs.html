@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>数字デザインの比較 | YUDA YUSEI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/number-designs.css" />
+  </head>
+  <body class="number-lab">
+    <main class="number-lab__inner">
+      <header class="number-lab__header">
+        <a class="number-lab__back" href="./lodging-service.html#details">← 実績詳細ページへ</a>
+        <p class="number-lab__eyebrow font-en">01 / 02 / 03</p>
+        <h1 class="font-en">NUMBER DESIGN<span aria-hidden="true">.</span></h1>
+        <p class="number-lab__intro">3つの案を、下の実績ページで切り替えて比較できます。</p>
+      </header>
+
+      <section class="number-options" aria-label="数字デザインの3つの案">
+        <article class="number-option" id="color-pop" data-selected="true">
+          <h2 class="font-en"><span>A</span> / COLOR POP</h2>
+          <div class="number-option__samples">
+            <img src="/images/works/number-options/color-pop-01.svg" alt="01" width="224" height="168" />
+            <img src="/images/works/number-options/color-pop-02.svg" alt="02" width="224" height="168" />
+            <img src="/images/works/number-options/color-pop-03.svg" alt="03" width="224" height="168" />
+          </div>
+          <p>太めの黒枠と、くっきりした影。丸い数字を一色でまとめた、少しレトロなポップ。</p>
+          <button class="number-option__button" type="button" data-number-design="color-pop" aria-pressed="true" aria-controls="number-preview">Aのデザインで比較</button>
+        </article>
+
+        <article class="number-option" id="soft-layers" data-selected="false">
+          <h2 class="font-en"><span>B</span> / SOFT LAYERS</h2>
+          <div class="number-option__samples">
+            <img src="/images/works/number-options/soft-layers-01.svg" alt="01" width="224" height="168" />
+            <img src="/images/works/number-options/soft-layers-02.svg" alt="02" width="224" height="168" />
+            <img src="/images/works/number-options/soft-layers-03.svg" alt="03" width="224" height="168" />
+          </div>
+          <p>丸いカラーパーツを重ねたデザイン。内側の黒線を抑えて、柔らかく軽い印象に。</p>
+          <button class="number-option__button" type="button" data-number-design="soft-layers" aria-pressed="false" aria-controls="number-preview">Bのデザインで比較</button>
+        </article>
+
+        <article class="number-option" id="dot-mix" data-selected="false">
+          <h2 class="font-en"><span>C</span> / DOT MIX</h2>
+          <div class="number-option__samples">
+            <img src="/images/works/number-options/dot-mix-01.svg" alt="01" width="224" height="168" />
+            <img src="/images/works/number-options/dot-mix-02.svg" alt="02" width="224" height="168" />
+            <img src="/images/works/number-options/dot-mix-03.svg" alt="03" width="224" height="168" />
+          </div>
+          <p>色ごとに小さなドットを散らした数字。イラストのような、明るく楽しいアクセント。</p>
+          <button class="number-option__button" type="button" data-number-design="dot-mix" aria-pressed="false" aria-controls="number-preview">Cのデザインで比較</button>
+        </article>
+      </section>
+
+      <section class="number-preview" aria-labelledby="preview-heading">
+        <header class="number-preview__heading">
+          <div>
+            <h2 id="preview-heading">実際のレイアウトで比較</h2>
+            <p class="number-preview__status" id="number-preview-status" role="status">選択中：A / COLOR POP</p>
+          </div>
+          <div class="number-preview__switches" role="group" aria-label="プレビューのデザインを切り替え">
+            <button class="font-en" type="button" data-number-design="color-pop" aria-pressed="true" aria-controls="number-preview">A / COLOR POP</button>
+            <button class="font-en" type="button" data-number-design="soft-layers" aria-pressed="false" aria-controls="number-preview">B / SOFT LAYERS</button>
+            <button class="font-en" type="button" data-number-design="dot-mix" aria-pressed="false" aria-controls="number-preview">C / DOT MIX</button>
+          </div>
+        </header>
+        <iframe id="number-preview" src="./lodging-service.html" title="選択した数字デザインで表示する実績詳細ページ"></iframe>
+      </section>
+    </main>
+    <script type="module" src="/src/scripts/number-designs.js"></script>
+  </body>
+</html>
