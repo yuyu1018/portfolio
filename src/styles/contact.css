@@ -115,7 +115,7 @@
   z-index: 7;
   right: 24%;
   bottom: -22px;
-  width: min(45%, 13rem);
+  width: min(40%, 13rem);
   height: auto;
   object-fit: contain;
   pointer-events: none;

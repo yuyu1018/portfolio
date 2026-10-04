@@ -378,7 +378,7 @@
   z-index: 7;
   right: clamp(1.5rem, 5cqi, 3rem);
   bottom: -0.75rem;
-  width: min(45%, 13rem);
+  width: min(40%, 13rem);
   height: auto;
   pointer-events: none;
   user-select: none;
