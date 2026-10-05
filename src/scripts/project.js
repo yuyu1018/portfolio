@@ -1,9 +1,5 @@
 "use strict";
 
-import { initializeNavigation } from "./navigation.js";
-
-initializeNavigation({ compactAt: 768 });
-
 const targets = document.querySelectorAll("[data-project-reveal]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
