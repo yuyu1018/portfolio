@@ -335,7 +335,7 @@
   gap: clamp(1rem, 3cqi, 3rem);
   max-width: 100%;
   min-height: 3.75rem;
-  margin-top: 2rem;
+  margin-top: clamp(1.5rem, 3cqi, 3rem);
   padding: 0.875rem clamp(1rem, 2.5cqi, 1.75rem);
   background: var(--color-yellow);
   border: 2px solid var(--color-ink);
@@ -525,7 +525,7 @@
   }
 
   .project-hero h1 {
-    font-size: clamp(2rem, 2.2vw, 2.25rem);
+    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
   }
 
   .project-overview .project-section-heading h2,
