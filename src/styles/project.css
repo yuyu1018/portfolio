@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: clamp(5.5rem, 8vw, 7rem);
+  min-height: clamp(5rem, 8vw, 7rem);
 }
 
 .project-mobile-header {
@@ -369,7 +369,7 @@
 
 .project-footer__art {
   position: relative;
-  height: clamp(5.5rem, 18cqi, 9rem);
+  height: clamp(5rem, 18cqi, 9rem);
   pointer-events: none;
 }
 
@@ -377,7 +377,7 @@
   position: absolute;
   z-index: 7;
   right: clamp(1.5rem, 5cqi, 3rem);
-  bottom: -0.75rem;
+  bottom: -0.7rem;
   width: min(40%, 13rem);
   height: auto;
   pointer-events: none;
@@ -522,10 +522,11 @@
 
   .project-mobile-header {
     display: flex;
+    border-bottom: 2px solid var(--color-ink);
   }
 
   .project-hero h1 {
-    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+    font-size: clamp(1.25rem, 2.2vw, 2.25rem);
   }
 
   .project-overview .project-section-heading h2,
@@ -557,6 +558,17 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+
+  .project-button {
+    min-height: clamp(3rem, 6.8vw, 3.25rem);
+    padding-block: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .project-button > span[aria-hidden] {
+    font-size: 1.25rem;
   }
 
   .project-outro__footprints {
