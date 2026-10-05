@@ -106,6 +106,10 @@
   letter-spacing: -0.02em;
 }
 
+.project-title-break {
+  display: none;
+}
+
 .project-preview img {
   width: 100%;
   height: auto;
@@ -526,7 +530,11 @@
   }
 
   .project-hero h1 {
-    font-size: clamp(1.25rem, 2.2vw, 2.25rem);
+    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  }
+
+  .project-title-break {
+    display: initial;
   }
 
   .project-overview .project-section-heading h2,
