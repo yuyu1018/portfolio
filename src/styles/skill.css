@@ -1,4 +1,4 @@
-.skill { background: var(--color-blue); }
+.skill { background: var(--color-blue); container-type: inline-size; }
 .skill__content { padding: 0; }
 .section-heading--skill { margin-bottom: clamp(3rem, 5vw, 5rem); }
 
@@ -73,7 +73,8 @@
   position: absolute;
   z-index: 4;
   top: 80%;
-  right: -87px;
+  /* カードの最大幅（68rem）を超えた余白を補正して、画面右端から出す。 */
+  right: calc(-87px - max(0px, (100cqi - 2 * var(--content-gutter) - 68rem) / 2));
   width: 170px;
   pointer-events: none;
   transform: translateY(-50%);
