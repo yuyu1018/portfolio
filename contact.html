@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Webサイト制作のご相談やご質問はこちらから。YUDA YUSEIへのお問い合わせページです。" />
+    <title>お問い合わせ | YUDA YUSEI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/inquiry.css" />
+  </head>
+  <body class="project-page inquiry-page">
+    <a class="skip-link" href="#inquiry-main">本文へ移動</a>
+
+    <div class="project-detail-layout">
+      <aside class="hero project-sidebar" data-theme="contact" aria-label="ポートフォリオ">
+        <header class="site-header">
+          <a class="site-logo font-en" href="./index.html" aria-label="ポートフォリオのトップページへ">PORTFOLIO</a>
+          <a class="project-back" href="./index.html#contact">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m5-5-5 5 5 5" /></svg>
+            <span>トップへ戻る</span>
+          </a>
+        </header>
+
+        <img class="hero__chameleon" src="/images/hero/hero-chameleon-footprints.png" alt="足跡を残しながら枝に乗るカメレオンのイラスト" fetchpriority="high" decoding="async" />
+        <div class="hero__heading">
+          <p class="hero__role font-en">WEB DESIGNER / CODING</p>
+          <p class="hero__name font-en"><span>Y</span>UDA <span>Y</span>USEI</p>
+        </div>
+      </aside>
+
+      <div class="project-detail-content">
+        <header class="project-header project-container project-mobile-header">
+          <a class="project-logo font-en" href="./index.html" aria-label="ポートフォリオのトップページへ">PORTFOLIO<span aria-hidden="true">.</span></a>
+          <a class="project-back" href="./index.html#contact">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m5-5-5 5 5 5" /></svg>
+            <span>トップへ戻る</span>
+          </a>
+        </header>
+
+        <main class="inquiry project-container" id="inquiry-main" tabindex="-1" aria-labelledby="inquiry-title">
+          <header class="inquiry__heading">
+            <p class="project-section-label font-en">CONTACT</p>
+            <h1 class="inquiry__title font-en" id="inquiry-title">LET'S TALK<span>!</span></h1>
+            <p class="inquiry__lead">Webサイト制作のご相談やご質問など、<br />気軽にメッセージをお送りください。</p>
+          </header>
+
+          <div class="inquiry__notice" id="inquiry-pending">
+            <p>お問い合わせフォームは現在準備中です。<br />お急ぎの方は、<a href="mailto:yudayusei@gmail.com">メールでご連絡ください<span aria-hidden="true"> ↗</span></a>。</p>
+          </div>
+
+          <!-- Formspreeで取得した送信先URLをactionに設定すると、フォームが有効になります。 -->
+          <form class="inquiry__form" id="inquiry-form" action="https://formspree.io/f/mqpepynw" method="post" aria-describedby="inquiry-pending">
+            <input type="hidden" name="_subject" value="ポートフォリオからのお問い合わせ" />
+            <div hidden aria-hidden="true"><label>この欄は空欄にしてください<input name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></label></div>
+
+            <fieldset class="inquiry__fields" disabled>
+              <legend class="project-sr-only">お問い合わせ内容</legend>
+              <div class="inquiry__field">
+                <label for="inquiry-name">お名前<span class="inquiry__required">必須</span></label>
+                <input id="inquiry-name" name="name" type="text" autocomplete="name" placeholder="例：山田 太郎" maxlength="100" required />
+              </div>
+
+              <div class="inquiry__field">
+                <label for="inquiry-email">メールアドレス<span class="inquiry__required">必須</span></label>
+                <input id="inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required />
+              </div>
+
+              <div class="inquiry__field">
+                <label for="inquiry-message">お問い合わせ内容<span class="inquiry__required">必須</span></label>
+                <textarea id="inquiry-message" name="message" rows="6" placeholder="ご相談内容やご質問をお聞かせください。" maxlength="5000" required></textarea>
+              </div>
+            </fieldset>
+
+            <p class="inquiry__status" id="inquiry-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button class="project-button inquiry__submit" type="submit" disabled>
+              <span data-submit-label>送信する</span><span aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <noscript><p class="inquiry__fallback">フォームをご利用いただけない場合は、メールでご連絡ください。</p></noscript>
+          <p class="inquiry__fallback">メールでのお問い合わせはこちら<br /><a href="mailto:yudayusei@gmail.com">yudayusei@gmail.com<span aria-hidden="true"> ↗</span></a></p>
+        </main>
+
+        <footer class="project-footer">
+          <div class="project-container">
+            <div class="project-footer__art" aria-hidden="true">
+              <img class="project-footer__chameleon" src="/images/contact/contact-chameleon.svg" alt="" width="242" height="162" loading="lazy" decoding="async" />
+            </div>
+            <div class="site-footer font-en"><p>DESIGN &amp; CODE WITH CURIOSITY.</p><p>© 2026 YUDA YUSEI</p></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="/src/scripts/inquiry.js"></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+@import url("./project.css");
+
+/* お問い合わせページ。左側・ヘッダー・フッターは実績詳細ページと共通。 */
+.inquiry {
+  padding-block: clamp(3rem, 5vw, 5rem) clamp(2rem, 4vw, 4rem);
+}
+
+.inquiry__heading {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 2px solid var(--color-ink);
+}
+
+.inquiry__title {
+  font-size: clamp(2.5rem, 6.4vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.inquiry__title span { color: var(--color-green); }
+
+.inquiry__lead {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.inquiry__notice {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 0.75rem;
+  background: #fff1ba;
+  font-size: 0.875rem;
+  line-height: 1.9;
+}
+
+.inquiry__notice[hidden] { display: none; }
+
+.inquiry__notice a,
+.inquiry__fallback a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.inquiry__form { margin-top: clamp(2rem, 4vw, 3rem); }
+
+.inquiry__fields {
+  display: grid;
+  min-width: 0;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.inquiry__field label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.inquiry__required {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--color-yellow);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.inquiry__field input,
+.inquiry__field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 0.75rem;
+  color: var(--color-ink);
+  background: var(--color-white);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.inquiry__field textarea { resize: vertical; }
+.inquiry__field ::placeholder { color: #77766f; }
+.inquiry__field :disabled { background: #f2efe6; cursor: not-allowed; }
+
+/* 入力中の欄は外枠を増やさず、背景と下辺で示す。 */
+.inquiry__field input:focus,
+.inquiry__field textarea:focus {
+  outline: none;
+  background: #fff9e7;
+  box-shadow: inset 0 -2px 0 var(--color-ink);
+}
+
+.inquiry__status {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.inquiry__status:empty { display: none; }
+.inquiry__status[data-state="error"] { color: #a93225; }
+.inquiry__status[data-state="success"] { color: #27763b; }
+
+.inquiry__submit { cursor: pointer; }
+
+.inquiry__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.inquiry__fallback {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+@container project-detail (max-width: 768px) {
+  .inquiry__title { font-size: clamp(2.5rem, 9cqi, 4.5rem); }
+}
+
+@media (max-width: 768px) {
+  .inquiry__title { font-size: clamp(2.5rem, calc(1rem + 7.5vw), 4.5rem); }
+}
