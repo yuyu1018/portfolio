@@ -9,6 +9,7 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         contact: fileURLToPath(new URL("./contact.html", import.meta.url)),
         lodgingService: fileURLToPath(new URL("./works/lodging-service.html", import.meta.url)),
+        greenhillRedesign: fileURLToPath(new URL("./works/greenhill-redesign.html", import.meta.url)),
       },
     },
   },
