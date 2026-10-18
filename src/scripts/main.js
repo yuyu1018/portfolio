@@ -1,6 +1,9 @@
 "use strict";
 
 import { initializeNavigation } from "./navigation.js";
+import { initializeOpening } from "./opening.js";
+
+const openingFinished = initializeOpening();
 
 initializeNavigation();
 
@@ -13,26 +16,28 @@ const revealTargets = document.querySelectorAll("[data-reveal]");
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-  revealTargets.forEach((target) => target.classList.add("is-revealed"));
-} else {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+openingFinished.then(() => {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((target) => target.classList.add("is-revealed"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
 
-        entry.target.classList.add("is-revealed");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -8% 0px",
-    },
-  );
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px",
+      },
+    );
 
-  revealTargets.forEach((target) => revealObserver.observe(target));
-}
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  }
+});
 
 const activateSection = (section) => {
   const { theme } = section.dataset;

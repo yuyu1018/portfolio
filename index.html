@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="YUDA YUSEIのポートフォリオサイトです。" />
     <title>YUDA YUSEI | Portfolio</title>
+    <script>
+      // 最初の描画前に準備し、JSの読み込みに失敗しても表示を塞がないようにする。
+      if (
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+        !window.location.hash &&
+        performance.getEntriesByType("navigation")[0]?.type !== "back_forward"
+      ) {
+        document.documentElement.classList.add("has-opening");
+        window.setTimeout(() => document.documentElement.classList.remove("has-opening"), 2400);
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +25,25 @@
     <link rel="stylesheet" href="/src/styles/style.css" />
   </head>
   <body>
+    <div class="opening" aria-hidden="true">
+      <div class="opening__identity">
+        <svg class="opening__chameleon" viewBox="0 0 300 230" fill="none" aria-hidden="true" focusable="false">
+          <g stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path pathLength="1" d="M58 174C35 149 44 109 67 78C91 45 121 38 150 58L173 74C170 52 175 28 190 28C208 28 241 55 254 79C269 104 252 111 235 107L218 103" />
+            <path pathLength="1" d="M218 103C230 113 241 114 249 110C257 113 253 122 244 123H207C203 137 207 149 220 155L232 156C238 156 238 165 231 165H211C198 157 191 141 194 123" />
+            <path pathLength="1" d="M194 145C171 159 143 159 123 151" />
+            <path pathLength="1" d="M81 133C96 119 111 113 124 118C143 126 138 142 133 152L151 154C160 156 158 164 152 164H123C114 162 117 151 121 138C109 140 100 150 94 162" />
+            <path pathLength="1" d="M94 162C78 156 65 165 64 180C62 198 85 207 99 197C117 185 109 164 93 163C82 162 74 170 76 179C78 188 91 191 96 182" />
+            <path pathLength="1" d="M58 174C56 190 63 207 79 212C97 218 115 209 122 194" />
+            <circle class="opening__eye" pathLength="1" cx="212" cy="77" r="13" />
+            <circle class="opening__eye" pathLength="1" cx="214" cy="76" r="3" />
+            <path class="opening__branch" pathLength="1" d="M122 178H244" />
+          </g>
+        </svg>
+        <div class="opening__line"></div>
+      </div>
+    </div>
+
     <a class="skip-link" href="#top">本文へ移動</a>
 
     <div class="site-layout">
