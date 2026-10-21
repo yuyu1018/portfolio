@@ -1,4 +1,4 @@
-# YUDA YUSEI Portfolio
+# YUSEI WEB Portfolio
 
 デザインとコーディングの実績を紹介するポートフォリオサイトです。
 
