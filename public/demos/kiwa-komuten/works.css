@@ -1,0 +1,229 @@
+/* 施工事例一覧。書体・色・幅・お問い合わせは共通CSSを使う。 */
+.portfolio-page {
+  --portfolio-copy-size: var(--font-small);
+  --reveal-duration: 1800ms;
+  --reveal-photo-duration: 2400ms;
+  --reveal-zoom-duration: 3400ms;
+  --reveal-copy-delay: 320ms;
+  --reveal-start-offset: 120px;
+  --reveal-threshold: 0.16;
+  --reveal-easing: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --photo-hover-scale: none;
+  --link-hover-duration: 1000ms;
+  --link-underline-duration: 1100ms;
+  --drawing-duration: 2400ms;
+  --drawing-delay: 420ms;
+}
+.portfolio-page [hidden] {
+  display: none;
+}
+
+/* ページ見出し */
+.portfolio-header {
+  padding-top: 40px;
+  padding-bottom: clamp(48px, 5vw, 80px);
+}
+.portfolio-breadcrumb {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+.portfolio-breadcrumb ol,
+.portfolio-breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+.portfolio-breadcrumb ol {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.portfolio-breadcrumb a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: Georgia, serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.portfolio-breadcrumb li + li::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  margin-right: 14px;
+  background: #a9a497;
+}
+.portfolio-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-top: 48px;
+}
+.portfolio-heading h1 {
+  margin-top: 12px;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.6;
+  letter-spacing: clamp(3px, 0.46875vw, 6px);
+}
+.portfolio-lead {
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 2;
+  letter-spacing: 2px;
+}
+.portfolio-intro p + p {
+  max-width: 28rem;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: var(--line-height-copy);
+  letter-spacing: 0.5px;
+}
+
+/* カテゴリ切り替え */
+.portfolio-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.portfolio-filter-buttons button {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  min-height: 52px;
+  padding: 12px 0 18px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: 1.8;
+  letter-spacing: 1px;
+  transition: color 500ms var(--reveal-easing);
+}
+.portfolio-filter-buttons button::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: var(--wood);
+  scale: 0 1;
+  transition: scale 500ms var(--reveal-easing);
+}
+.portfolio-filter-buttons button[aria-pressed="true"] {
+  color: var(--wood);
+}
+.portfolio-filter-buttons button[aria-pressed="true"]::after {
+  scale: 1 1;
+}
+.portfolio-results {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+/* 件数が増えても同じ大きさで並ぶ事例一覧。 */
+.portfolio-list {
+  padding-bottom: clamp(88px, 10vw, 160px);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(48px, 5vw, 80px) clamp(24px, 2.35vw, 40px);
+  align-items: start;
+  margin-top: 32px;
+}
+.portfolio-case {
+  min-width: 0;
+}
+.portfolio-photo {
+  display: block;
+  aspect-ratio: 4 / 3;
+}
+.portfolio-copy {
+  padding-top: 24px;
+}
+.portfolio-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+.portfolio-number {
+  color: var(--wood);
+  font: 15px/1.5 Georgia, serif;
+  letter-spacing: 1px;
+}
+.portfolio-copy h2 {
+  margin-top: 12px;
+  font-size: var(--font-card);
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+.portfolio-description {
+  max-width: 27rem;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: var(--line-height-copy);
+  letter-spacing: 0.5px;
+  text-wrap: balance;
+}
+.portfolio-copy .text-link {
+  margin-top: 28px;
+}
+
+/* 共通のお問い合わせに向けて和紙の背景をつなぐ。 */
+.portfolio-contact-wrap {
+  margin-bottom: 56px;
+}
+.portfolio-contact-wrap::before {
+  bottom: 50%;
+}
+.portfolio-contact {
+  margin-block: 0;
+}
+@media (max-width: 1100px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .portfolio-header {
+    padding-top: 24px;
+  }
+  .portfolio-heading {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio-page {
+    --portfolio-copy-size: 0.9375rem;
+    --reveal-duration: 1400ms;
+    --reveal-photo-duration: 1900ms;
+    --reveal-zoom-duration: 2800ms;
+    --reveal-copy-delay: 240ms;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-heading {
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .portfolio-filter-buttons {
+    gap: 20px;
+  }
+  .portfolio-grid {
+    gap: 64px;
+    margin-top: 28px;
+  }
+  .portfolio-copy .text-link {
+    margin-top: 20px;
+  }
+}

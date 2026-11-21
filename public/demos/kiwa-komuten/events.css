@@ -1,0 +1,41 @@
+/* 既存の写真・開催概要と共通の記事レイアウトを使うイベント一覧。 */
+.event-index {
+  padding-bottom: clamp(96px, 10vw, 160px);
+}
+.event-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(64px, 6vw, 96px) clamp(32px, 4vw, 64px);
+}
+.event-index-grid > li {
+  min-width: 0;
+}
+.event-index-photo {
+  aspect-ratio: 3 / 2;
+}
+.event-index-copy {
+  padding-top: 32px;
+}
+.event-index-copy h2 {
+  font-size: var(--font-card);
+}
+.event-index-copy .event-meta {
+  font-size: var(--portfolio-copy-size);
+}
+.event-index-description {
+  margin-top: 24px;
+  font-size: var(--portfolio-copy-size);
+  line-height: var(--line-height-body);
+  letter-spacing: 1px;
+}
+.event-index-copy .text-link {
+  margin-top: 24px;
+}
+@media (max-width: 600px) {
+  .event-index-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .event-index-copy {
+    padding-top: 24px;
+  }
+}

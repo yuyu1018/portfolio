@@ -10,6 +10,7 @@ export default defineConfig({
         contact: fileURLToPath(new URL("./contact.html", import.meta.url)),
         lodgingService: fileURLToPath(new URL("./works/lodging-service.html", import.meta.url)),
         greenhillRedesign: fileURLToPath(new URL("./works/greenhill-redesign.html", import.meta.url)),
+        kiwaKomuten: fileURLToPath(new URL("./works/kiwa-komuten.html", import.meta.url)),
       },
     },
   },

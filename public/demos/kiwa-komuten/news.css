@@ -1,0 +1,178 @@
+/* お知らせ。共通の本文枠・書体・緩やかな表示アニメーションを引き継ぐ。 */
+.bulletin-intro {
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: var(--line-height-body);
+  letter-spacing: 1px;
+}
+.bulletin-list-section {
+  padding-bottom: clamp(96px, 10vw, 160px);
+}
+.bulletin-count {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  letter-spacing: 1px;
+}
+.bulletin-list {
+  border-top: 1px solid var(--line);
+}
+.bulletin-list > li {
+  border-bottom: 1px solid var(--line);
+}
+.bulletin-entry {
+  display: grid;
+  grid-template-columns: clamp(120px, 14vw, 200px) minmax(0, 1fr) 24px;
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+  padding-block: 32px;
+}
+.bulletin-thumbnail {
+  aspect-ratio: 3 / 2;
+}
+.bulletin-entry-copy {
+  min-width: 0;
+}
+.bulletin-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+  font-size: var(--portfolio-copy-size);
+  line-height: 1.8;
+}
+.bulletin-meta time {
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+}
+.bulletin-meta .news-tag {
+  margin: 0;
+}
+.bulletin-entry-title {
+  display: block;
+  margin-top: 16px;
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 1.9;
+  letter-spacing: 1px;
+  transition: color 500ms var(--reveal-easing);
+}
+.bulletin-entry:hover .bulletin-entry-title {
+  color: var(--wood);
+}
+.bulletin-entry-arrow {
+  transition: translate var(--link-hover-duration) var(--reveal-easing);
+}
+.bulletin-entry:hover .bulletin-entry-arrow {
+  translate: 4px;
+}
+
+/* 詳細も他ページと同じ共通コンテンツ枠を使う。 */
+.bulletin-detail-header {
+  padding-bottom: 48px;
+}
+.bulletin-detail-heading {
+  margin-top: 48px;
+}
+.bulletin-detail-heading .bulletin-meta {
+  margin-top: 24px;
+}
+.bulletin-detail-heading h1 {
+  margin-top: 20px;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  line-height: 1.8;
+  letter-spacing: clamp(1px, 0.15vw, 3px);
+  overflow-wrap: anywhere;
+}
+.bulletin-hero {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+}
+.bulletin-body {
+  padding-top: clamp(40px, 4vw, 64px);
+}
+.bulletin-body > p:not(.eyebrow) {
+  margin-top: 28px;
+  font-size: var(--font-body);
+  line-height: var(--line-height-body);
+  letter-spacing: 1px;
+}
+.bulletin-event {
+  max-width: 45rem;
+  margin-top: 40px;
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--washi-background);
+}
+.bulletin-event h3 {
+  font-size: var(--font-body);
+  line-height: 1.8;
+  letter-spacing: 2px;
+}
+.bulletin-event-facts {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  font-size: var(--portfolio-copy-size);
+  line-height: 2;
+}
+.bulletin-event-facts > div {
+  display: grid;
+  grid-template-columns: 5em minmax(0, 1fr);
+  gap: 20px;
+}
+.bulletin-event-facts dt,
+.bulletin-note {
+  color: var(--muted);
+}
+.bulletin-note {
+  margin-top: 24px;
+  font-size: var(--portfolio-copy-size);
+  line-height: 2;
+}
+.bulletin-body .text-link {
+  max-width: 100%;
+  margin-top: 32px;
+}
+.bulletin-back {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(64px, 6vw, 96px);
+  padding-block: 40px clamp(80px, 8vw, 128px);
+  border-top: 1px solid var(--line);
+}
+.bulletin-back .solid-link {
+  width: min(100%, 280px);
+  font-size: var(--portfolio-copy-size);
+}
+@media (max-width: 900px) {
+  .bulletin-detail-heading {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .bulletin-entry {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    gap: 20px;
+    padding-block: 24px;
+  }
+  .bulletin-thumbnail {
+    grid-column: 1 / -1;
+    width: min(100%, 400px);
+  }
+  .bulletin-detail-heading {
+    margin-top: 24px;
+  }
+  .bulletin-detail-header {
+    padding-bottom: 32px;
+  }
+  .bulletin-event-facts > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bulletin-entry-title,
+  .bulletin-entry-arrow {
+    transition: none;
+  }
+}

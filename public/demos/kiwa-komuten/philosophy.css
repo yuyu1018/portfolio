@@ -1,0 +1,530 @@
+/* Figma 167:167。共通の色・書体・枠・動きはstyles.cssを利用する。 */
+.homebuilding-page {
+  --hb-copy-size: var(--font-small);
+  --hb-detail-size: clamp(0.8125rem, 0.75rem + 0.078125vw, 0.875rem);
+  --hb-section-space: clamp(88px, 10vw, 160px);
+  --hb-grid-gap: clamp(32px, 5vw, 64px);
+  /* 下層ページでは初速も抑え、写真と文章をゆっくり見せる。 */
+  --reveal-duration: 1800ms;
+  --reveal-photo-duration: 2400ms;
+  --reveal-zoom-duration: 3400ms;
+  --reveal-copy-delay: 320ms;
+  --reveal-start-offset: 120px;
+  --reveal-threshold: 0.16;
+  --reveal-easing: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --photo-hover-scale: none;
+  --link-hover-duration: 1000ms;
+  --link-underline-duration: 1100ms;
+  --drawing-duration: 2400ms;
+  --drawing-delay: 420ms;
+}
+.hb-label {
+  font-size: clamp(0.6875rem, 0.625rem + 0.078125vw, 0.75rem);
+  letter-spacing: 2.4px;
+}
+.hb-intro,
+.hb-prose,
+.hb-section-intro {
+  font-size: var(--hb-copy-size);
+  line-height: var(--line-height-body);
+  letter-spacing: 1px;
+}
+.hb-prose p + p {
+  margin-top: 20px;
+}
+.hb-section-intro {
+  margin-top: 24px;
+  color: var(--muted);
+}
+
+/* ページ見出しとメイン写真 */
+.hb-page-header {
+  padding-top: 40px;
+}
+.hb-breadcrumb {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+.hb-breadcrumb ol,
+.hb-breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+.hb-breadcrumb ol {
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+.hb-breadcrumb a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: Georgia, serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hb-breadcrumb li + li::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  margin-right: 14px;
+  background: #a9a497;
+}
+.hb-page-heading {
+  margin-top: 64px;
+}
+.hb-page-heading h1 {
+  margin-top: 12px;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.6;
+  letter-spacing: clamp(3px, 0.46875vw, 6px);
+}
+.hb-intro {
+  max-width: 29.75rem;
+  margin-top: 28px;
+}
+.hb-hero {
+  margin-top: 64px;
+  aspect-ratio: 7 / 3;
+  max-height: 480px;
+}
+
+/* 私たちの想い */
+.hb-philosophy {
+  padding-block: var(--hb-section-space) 0;
+}
+.hb-belief-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: var(--hb-grid-gap);
+  align-items: start;
+}
+.hb-belief-copy {
+  padding-top: 40px;
+}
+.hb-belief-lead {
+  margin-top: 40px;
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+  line-height: 2;
+  letter-spacing: 3px;
+}
+.hb-belief-body {
+  margin-top: 32px;
+}
+.hb-belief-photo {
+  aspect-ratio: 4 / 5;
+}
+.hb-signature {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 36px;
+}
+.hb-signature span:first-child {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+}
+.hb-signature span:last-child {
+  font-size: 1rem;
+  letter-spacing: 4px;
+}
+.hb-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px 0;
+  margin-top: 80px;
+  padding: 4px;
+}
+.hb-values > li {
+  position: relative;
+  isolation: isolate;
+  flex: 1 1 17.5rem;
+  max-width: 22rem;
+  min-width: 0;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: clamp(14px, 1.6vw, 24px);
+  align-content: center;
+  align-items: start;
+  padding: 24px clamp(24px, 3.125vw, 40px) 24px clamp(16px, 1.5vw, 24px);
+}
+.hb-values > li:nth-child(2) {
+  margin-top: clamp(64px, 7.5vw, 112px);
+}
+.hb-values > li:nth-child(3) {
+  margin-top: clamp(12px, 2vw, 32px);
+}
+@media (min-width: 1101px) {
+  .hb-values > li + li {
+    margin-left: clamp(-40px, -3vw, -32px);
+  }
+}
+.hb-values > li::before,
+.hb-values > li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hb-values > li::before {
+  inset: -4px;
+}
+.hb-values > li::after {
+  inset: 9.8%;
+  border-color: #d6d1c6;
+}
+.hb-value-word {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+  font-size: var(--font-section);
+  line-height: 1.4;
+  letter-spacing: 0.35em;
+  /* 縦書きの背後だけ円を切り欠く。 */
+  background: var(--paper);
+  box-shadow: 0 0 0 8px var(--paper);
+}
+.hb-value-copy h3 {
+  font-size: var(--hb-copy-size);
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+.hb-value-copy p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: clamp(0.75rem, 0.6875rem + 0.078125vw, 0.8125rem);
+  line-height: 2.2;
+  letter-spacing: 0.5px;
+}
+
+/* 家づくりのこだわり */
+.hb-craft-band {
+  padding-block: clamp(88px, 8.75vw, 144px) var(--hb-section-space);
+}
+.hb-craft-list {
+  display: grid;
+  gap: clamp(80px, 8.75vw, 144px);
+  margin-top: 80px;
+}
+.hb-craft-item {
+  width: min(94%, 69rem);
+  justify-self: start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hb-grid-gap);
+  align-items: center;
+}
+.hb-craft-photo {
+  aspect-ratio: 4 / 5;
+}
+.hb-craft-copy {
+  position: relative;
+  padding: clamp(56px, 5.1vw, 80px) 0 0 clamp(24px, 3vw, 48px);
+}
+.hb-craft-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #c6c3b8;
+  font-size: clamp(3.5rem, 5.6vw, 5.5rem);
+  line-height: 1;
+  opacity: 0.5;
+}
+.hb-craft-copy h3 {
+  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+  line-height: 1.7;
+  letter-spacing: 3px;
+}
+.hb-craft-subtitle {
+  margin-top: 12px;
+  font-size: clamp(0.9375rem, 0.875rem + 0.078125vw, 1.0625rem);
+  line-height: 2;
+  letter-spacing: 1px;
+}
+.hb-craft-description {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: var(--hb-detail-size);
+  line-height: 2.3;
+  letter-spacing: 0.5px;
+}
+.hb-craft-points {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 21rem);
+  margin-top: 28px;
+  font-size: var(--hb-copy-size);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+.hb-craft-points > li {
+  padding: clamp(20px, 1.875vw, 28px);
+}
+.hb-craft-point-description {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: var(--hb-detail-size);
+  line-height: 2;
+}
+.hb-craft-item:nth-child(even) {
+  justify-self: end;
+}
+.hb-craft-item:nth-child(even) .hb-craft-photo {
+  grid-column: 2;
+  grid-row: 1;
+}
+.hb-craft-item:nth-child(even) .hb-craft-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+@media (min-width: 1101px) {
+  .hb-craft-item {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  }
+  .hb-craft-item:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  }
+}
+
+/* 淡い背景を画面幅に広げ、お問い合わせの中央で白地に切り替える。 */
+.hb-background-band {
+  position: relative;
+  isolation: isolate;
+}
+.hb-background-band::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: calc(-1 * var(--sidebar));
+  width: 100vw;
+}
+.hb-contact-wrap {
+  margin-bottom: 56px;
+}
+.hb-contact-wrap::before {
+  bottom: 50%;
+}
+
+/* ご相談からお引き渡し後まで。縦線は各ステップの高さに追従する。 */
+.hb-flow {
+  padding-block: clamp(88px, 9.375vw, 160px);
+}
+.hb-flow-photo {
+  width: 100%;
+  margin-top: 64px;
+  aspect-ratio: 7 / 3;
+}
+.hb-flow-groups {
+  width: min(100%, 48rem);
+  max-width: 64%;
+  margin: 80px auto 0;
+}
+.hb-flow-phase + .hb-flow-phase {
+  margin-top: clamp(64px, 6.25vw, 96px);
+}
+.hb-phase-heading h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.8;
+  letter-spacing: 4px;
+}
+.hb-phase-period {
+  margin-top: 4px;
+  color: var(--wood);
+  font-size: var(--hb-detail-size);
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
+.hb-timeline {
+  --step-size: 56px;
+  --step-gap: 28px;
+  margin-top: 36px;
+}
+.hb-timeline > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--step-size) minmax(0, 1fr);
+  gap: var(--step-gap);
+  padding-bottom: 48px;
+}
+.hb-timeline > li::before {
+  content: "";
+  position: absolute;
+  top: var(--step-size);
+  bottom: 0;
+  left: calc(var(--step-size) / 2);
+  width: 1px;
+  background: #d9d5cb;
+}
+.hb-timeline > li:last-child {
+  padding-bottom: 0;
+}
+.hb-timeline > li:last-child::before {
+  content: none;
+}
+.hb-step-number {
+  display: grid;
+  place-items: center;
+  width: var(--step-size);
+  height: var(--step-size);
+  border: 1px solid #a9a497;
+  border-radius: 50%;
+  color: var(--wood);
+  font: 15px/1.5 Georgia, serif;
+  letter-spacing: 1px;
+  transition:
+    background-color 600ms var(--reveal-easing),
+    border-color 600ms var(--reveal-easing),
+    color 600ms var(--reveal-easing);
+}
+.hb-timeline > li.is-current .hb-step-number {
+  background: var(--wood);
+  border-color: var(--wood);
+  color: #f7f5f1;
+}
+.hb-step-copy {
+  padding-top: 4px;
+}
+.hb-step-label {
+  color: var(--muted);
+  font: 10px/1.5 Georgia, serif;
+  letter-spacing: 2.4px;
+}
+.hb-step-copy h4 {
+  margin: 4px 0 0;
+  font-size: clamp(1.0625rem, 1rem + 0.15625vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+}
+.hb-step-description {
+  max-width: 35rem;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: var(--hb-detail-size);
+  line-height: 2.2;
+  letter-spacing: 0.5px;
+}
+.hb-flow-note {
+  margin-top: 64px;
+  color: var(--muted);
+  font-size: clamp(0.6875rem, 0.625rem + 0.078125vw, 0.75rem);
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
+
+/* TOPと共通のお問い合わせ */
+.hb-contact {
+  margin-block: 0;
+}
+
+@media (max-width: 900px) {
+  .hb-page-header {
+    padding-top: 24px;
+  }
+  .hb-page-heading {
+    margin-top: 48px;
+  }
+  .hb-belief-copy {
+    padding-top: 24px;
+  }
+  .hb-flow-groups {
+    max-width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .homebuilding-page {
+    --hb-copy-size: 0.9375rem;
+    --hb-detail-size: 0.9375rem;
+    --reveal-duration: 1400ms;
+    --reveal-photo-duration: 1900ms;
+    --reveal-zoom-duration: 2800ms;
+    --reveal-copy-delay: 240ms;
+  }
+  .hb-page-heading {
+    margin-top: 32px;
+  }
+  .hb-page-heading h1 {
+    letter-spacing: 3px;
+  }
+  .hb-hero {
+    margin-top: 40px;
+    aspect-ratio: 4 / 3;
+  }
+  .hb-belief-grid,
+  .hb-craft-item {
+    grid-template-columns: 1fr;
+  }
+  .hb-values {
+    flex-direction: column;
+    margin-top: 48px;
+  }
+  .hb-values > li {
+    flex: none;
+    width: min(100%, clamp(17rem, 90%, 22rem));
+  }
+  .hb-values > li:nth-child(2),
+  .hb-values > li:nth-child(3) {
+    margin-top: -64px;
+  }
+  .hb-values > li:nth-child(2) {
+    align-self: flex-end;
+  }
+  .hb-values > li:nth-child(3) {
+    align-self: center;
+  }
+  .hb-belief-copy {
+    padding-top: 0;
+  }
+  .hb-belief-lead {
+    margin-top: 28px;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+  }
+  .hb-belief-photo {
+    width: 86%;
+    margin-left: auto;
+  }
+  .hb-value-copy p {
+    font-size: var(--hb-copy-size);
+    line-height: var(--line-height-copy);
+  }
+  .hb-craft-list {
+    margin-top: 48px;
+  }
+  .hb-craft-item {
+    max-width: 25rem;
+  }
+  .hb-craft-copy {
+    padding-top: 56px;
+  }
+  .hb-craft-item:nth-child(even) .hb-craft-photo,
+  .hb-craft-item:nth-child(even) .hb-craft-copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .hb-flow-photo {
+    margin-top: 40px;
+  }
+  .hb-flow-groups {
+    max-width: 100%;
+    margin-top: 48px;
+  }
+  .hb-timeline {
+    --step-size: 44px;
+    --step-gap: 20px;
+  }
+  .hb-step-description,
+  .hb-craft-description {
+    line-height: var(--line-height-copy);
+  }
+}
